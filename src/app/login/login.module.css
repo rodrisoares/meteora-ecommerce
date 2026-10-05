@@ -1,0 +1,42 @@
+.page {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1rem;
+  min-height: 60vh;
+}
+
+.card {
+  width: 100%;
+  max-width: 400px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.title {
+  margin: 0 0 0.5rem;
+  color: var(--text);
+}
+
+.hint {
+  color: var(--text-subtle);
+  font-size: 0.85rem;
+  margin: 0 0 1.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.password {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+}

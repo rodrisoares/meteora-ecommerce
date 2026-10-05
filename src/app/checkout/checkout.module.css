@@ -1,0 +1,196 @@
+.page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  min-height: 60vh;
+}
+
+.heading {
+  font-size: 2rem;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 2rem;
+  align-items: start;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.payment {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.payment legend {
+  font-size: 0.9rem;
+  color: var(--text);
+  padding: 0 0.4rem;
+}
+
+.radio {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.submit {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+/* Cupom */
+.couponRow {
+  display: flex;
+  gap: 0.5rem;
+  align-items: stretch;
+}
+
+.couponRow > :first-child {
+  flex: 1;
+}
+
+.couponOk {
+  color: #1e7e34;
+  font-size: 0.85rem;
+}
+
+.couponError {
+  color: #c82333;
+  font-size: 0.85rem;
+}
+
+/* Resumo */
+.summary {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  position: sticky;
+  top: 1rem;
+}
+
+.summary h2 {
+  margin: 0 0 1rem;
+  font-size: 1.2rem;
+}
+
+.summaryItems {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.summaryItems li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.summarySubtotal,
+.summaryDiscount {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.summaryDiscount {
+  color: #1e7e34;
+}
+
+.summaryTotal {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--border);
+  padding-top: 0.75rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+/* Confirmação */
+.confirmation {
+  text-align: center;
+  padding: 3rem 1rem;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.checkIcon {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.confirmationCoupon {
+  color: #1e7e34;
+  margin-top: 0.5rem;
+}
+
+.confirmationTotal {
+  font-weight: 700;
+  color: var(--text);
+  margin-top: 0.5rem;
+}
+
+.confirmationActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.empty {
+  color: var(--text-muted);
+}
+
+.link {
+  color: #9353ff;
+  font-weight: 600;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .summary {
+    position: static;
+  }
+}
