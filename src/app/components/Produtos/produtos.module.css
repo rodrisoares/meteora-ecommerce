@@ -1,0 +1,38 @@
+.products {
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+}
+
+.products h2 {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto 8px;
+  padding-bottom: 12px;
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.products h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 64px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #daff01;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 20px;
+}

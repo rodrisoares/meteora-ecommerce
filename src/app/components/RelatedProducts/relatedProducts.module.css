@@ -1,0 +1,19 @@
+.section {
+  max-width: 1200px;
+  margin: 3rem auto 1rem;
+  padding: 0 1rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}

@@ -1,0 +1,296 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #000;
+  padding: 10px 24px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 10px;
+}
+
+.nav ul {
+  display: flex;
+  gap: 32px;
+  margin: 0;
+}
+
+.nav li {
+  cursor: pointer;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px;
+}
+
+.nav li a {
+  color: #fff;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.nav li a:hover {
+  color: #daff01;
+}
+
+/* Link da rota atual em destaque */
+.nav li a.active {
+  color: #daff01;
+  border-bottom-color: #daff01;
+  font-weight: 500;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Bloco à direita: busca + ações */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* 🔍 Busca inline */
+.search {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.searchInput {
+  border: none;
+  outline: none;
+  padding: 8px 12px;
+  width: 200px;
+  height: 38px;
+  font-size: 14px;
+  /* Fundo do campo é sempre branco, então o texto precisa ser escuro
+     independentemente do tema (não usar var(--text)). */
+  color: #212529;
+  background: transparent;
+}
+
+.searchInput::placeholder {
+  color: #888;
+}
+
+.searchButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  background: #daff01;
+  color: #000;
+  height: 38px;
+  width: 40px;
+  flex-shrink: 0;
+}
+
+.searchButton:hover {
+  filter: brightness(0.95);
+}
+
+/* 🛒 Ações (favoritos, carrinho, conta) */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* Especificidade extra (`.actions .action`) para vencer o reset global
+   `a:link { all: unset }`, que senão zera o `position: relative` do link e
+   faz o badge do carrinho escapar para o canto da tela. */
+.actions .action {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  color: #fff;
+  transition: color 0.2s;
+}
+
+.actions .action:hover {
+  color: #daff01;
+}
+
+.badge {
+  position: absolute;
+  top: -12px;
+  right: -10px;
+  background: #9353ff;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  pointer-events: none;
+}
+
+/* 👤 Conta / login */
+.account {
+  position: relative;
+}
+
+.accountButton,
+.actions .accountLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.accountButton:hover,
+.actions .accountLink:hover {
+  color: #daff01;
+}
+
+.accountName {
+  white-space: nowrap;
+}
+
+/* Dropdown da conta */
+.dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 180px;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  z-index: 110;
+}
+
+/* Especificidade extra (`.dropdown .dropdownItem`) para vencer o reset global
+   `a:link { all: unset }` — sem isso os itens <Link> ficam desalinhados em
+   relação ao <button> "Sair". */
+.dropdown .dropdownItem {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  margin: 0;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.2;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.dropdown .dropdownItem:hover {
+  background: var(--surface-2);
+}
+
+/* 🍔 Botão hambúrguer (só aparece no mobile) */
+.menuToggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #fff;
+  line-height: 1;
+  cursor: pointer;
+  padding: 6px 10px;
+}
+
+/* 📱 Responsividade / menu mobile */
+@media (max-width: 900px) {
+  .searchInput {
+    width: 140px;
+  }
+
+  .accountName {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 6px;
+  }
+
+  .menuToggle {
+    display: inline-flex;
+  }
+
+  .menu {
+    order: 3;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    padding: 12px 6px;
+  }
+
+  .menu.open {
+    display: flex;
+  }
+
+  .right {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 0 6px 10px;
+  }
+
+  .search {
+    width: 100%;
+  }
+
+  .searchInput {
+    width: 100%;
+    flex: 1;
+  }
+
+  .actions {
+    justify-content: flex-end;
+  }
+
+  .accountName {
+    display: inline;
+  }
+}

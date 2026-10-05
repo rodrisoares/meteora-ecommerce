@@ -1,0 +1,118 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: 48px 24px;
+}
+
+.card {
+  width: 100%;
+  max-width: 520px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 40px 32px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.icon {
+  font-size: 48px;
+  line-height: 1;
+}
+
+.title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.description {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.retry {
+  appearance: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 128px;
+  height: 48px;
+  padding: 0 24px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  background: #1a1a1a;
+  transition: background 0.2s;
+}
+
+.retry:hover {
+  background: #383838;
+}
+
+/* Especificidade extra (`.actions .homeLink`) para vencer o reset global
+   `a:link { all: unset }` do globals.css, que senão zera estes estilos. */
+.actions .homeLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 48px;
+  padding: 0 24px;
+  border-radius: 128px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.actions .homeLink:hover {
+  background: var(--surface-2);
+}
+
+/* Segue o toggle manual de tema ([data-theme="dark"] no <html>) em vez de
+   `prefers-color-scheme`, para respeitar a escolha do usuário no header. */
+:global([data-theme="dark"]) .card {
+  border-color: rgba(255, 255, 255, 0.145);
+  background: var(--surface);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+:global([data-theme="dark"]) .actions .homeLink {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+:global([data-theme="dark"]) .actions .homeLink:hover {
+  background: var(--surface-2);
+}
+
+@media (max-width: 600px) {
+  .actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .actions .retry,
+  .actions .homeLink {
+    width: 100%;
+  }
+}

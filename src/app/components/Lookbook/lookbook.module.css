@@ -1,0 +1,95 @@
+.lookbook {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.lookbook h2 {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto 8px;
+  padding-bottom: 12px;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.lookbook h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 64px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #daff01;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 20px;
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Área da imagem: altura contida para o recorte de produto não gigantear. */
+.imageWrap {
+  position: relative;
+  height: 220px;
+  background: var(--surface-2);
+  padding: 20px;
+}
+
+.image {
+  transition: transform 0.3s ease;
+}
+
+.tile:hover .image {
+  transform: scale(1.05);
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 14px 18px;
+  background: #000;
+}
+
+.name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.cta {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #daff01;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

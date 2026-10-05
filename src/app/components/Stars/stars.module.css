@@ -1,0 +1,20 @@
+.stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 1px;
+  line-height: 1;
+}
+
+.filled {
+  color: #f5a623;
+}
+
+.empty {
+  color: #d9d9d9;
+}
+
+.count {
+  margin-left: 6px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}

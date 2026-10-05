@@ -1,0 +1,77 @@
+/* 🎨 Tokens de tema (claro por padrão).
+   As cores neutras da aplicação referenciam estas variáveis; alternar
+   [data-theme="dark"] no <html> troca a paleta inteira de uma vez. */
+:root {
+  --bg: #ffffff;            /* fundo da página */
+  --surface: #ffffff;       /* cards, painéis, inputs */
+  --surface-2: #f5f5f5;     /* fundos sutis/alternados */
+  --text: #212529;          /* texto principal */
+  --text-muted: #666666;    /* texto secundário */
+  --text-subtle: #999999;   /* texto terciário */
+  --border: #e1e1e1;        /* divisórias/bordas */
+  --border-strong: #cccccc; /* bordas mais marcadas */
+
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --bg: #121212;
+  --surface: #1e1e1e;
+  --surface-2: #262626;
+  --text: #ededed;
+  --text-muted: #b3b3b3;
+  --text-subtle: #8a8a8a;
+  --border: #333333;
+  --border-strong: #444444;
+
+  color-scheme: dark;
+}
+
+/* Estilos globais */
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--text);
+  background-color: var(--bg);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  margin: 0;
+  min-height: 100vh;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+ul li {
+  list-style: none;
+}
+
+a:link,
+a:active,
+a:visited {
+  all: unset;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1440px;
+  min-height: 50vh;
+  margin: 0 auto;
+}
+
+@media (max-width: 1490px) {
+  .container {
+    margin: 0 128px;
+  }
+}
+
+/* ♿ Foco visível para navegação por teclado.
+   O reset `a { all: unset }` acima remove o outline padrão dos links,
+   então restauramos um anel de foco claro apenas quando navegando por teclado. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid #9353ff;
+  outline-offset: 2px;
+  border-radius: 2px;
+}

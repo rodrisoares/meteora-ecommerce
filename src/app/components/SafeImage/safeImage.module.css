@@ -1,0 +1,9 @@
+.fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-2);
+  color: var(--text-subtle);
+  font-size: 2.5rem;
+  max-width: 100%;
+}

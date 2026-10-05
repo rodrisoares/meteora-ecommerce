@@ -1,0 +1,78 @@
+/* Categories.module.css */
+.categorias {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+
+.categorias h2 {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto 8px;
+  padding-bottom: 12px;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.categorias h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 64px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #daff01;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+/* Especificidade extra (`.container .card`) para vencer o reset global
+   `a:link { all: unset }` do globals.css — o card agora é um <Link>. */
+.container .card {
+  background-color: #daff01;
+  text-align: center;
+  width: 160px;
+  height: 192px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.container .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.imagemContainer {
+  padding: 10px 10px 0 10px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 1rem;
+  color: #fff;
+  background: #000;
+  display: flex;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  margin: 0;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}

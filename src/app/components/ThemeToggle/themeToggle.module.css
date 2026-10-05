@@ -1,0 +1,23 @@
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.toggle:hover {
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.toggle:active {
+  transform: scale(0.95);
+}
