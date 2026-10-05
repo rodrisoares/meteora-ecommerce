@@ -1,0 +1,61 @@
+.wrapper {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.image {
+  flex: 1;
+  min-width: 280px;
+  height: 422px;
+  border-radius: 8px;
+}
+
+.info {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.line {
+  height: 16px;
+  border-radius: 4px;
+}
+
+.title {
+  height: 28px;
+  width: 60%;
+}
+
+.short {
+  width: 40%;
+}
+
+.button {
+  height: 48px;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+/* Shimmer */
+.image,
+.line,
+.button {
+  background: linear-gradient(90deg, #eee 25%, var(--surface-2) 37%, #eee 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.4s ease infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
